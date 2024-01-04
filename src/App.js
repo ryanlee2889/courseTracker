@@ -15,7 +15,6 @@ function App() {
   const [notificationDuration, setNotificationDuration] = useState(0);
   const emailInputRef = useRef();
   
-  
   const snipesRef = useRef(snipes);
 
   useEffect(() => {
@@ -43,7 +42,6 @@ function App() {
         const [status] = await getSectionData(snipe.index, url);
         const statusText = status ? "Open" : "Closed";
       
-        // If the status has changed, update the snipe in Firestore and in the newSnipes array
         if (statusText !== snipe.status) {
           const updatedDoc = doc(db, "snipes", snipe.index);
           await updateDoc(updatedDoc, { status: statusText });
@@ -60,7 +58,7 @@ function App() {
             console.log("Email sent");
           }
       
-          // Return the updated snipe
+          // Update the Snipe object
           snipe = { ...snipe, status: statusText };
         }
       
@@ -118,7 +116,6 @@ function App() {
     const querySnapshot = await getDocs(q);
 
     // If a snipe with the same index exists, show a notification and return without adding the new snipe
-    // If a snipe with the same index exists, show a notification and return without adding the new snipe
     if (!querySnapshot.empty) {
       setNotificationMessage(`A snipe with index ${newSnipe.index} already exists. Timestamp: ${Date.now()}`);
       setNotificationDuration(5);
@@ -154,7 +151,6 @@ function App() {
     <div className="App">
       <Notification message={notificationMessage} duration={notificationDuration} />
       <h1>Course Sniper</h1>
-
       <div className="Wrapper">
         <div className="AddSnipe"> 
           <h3 className="snipeText">Add A Snipe</h3>
@@ -192,8 +188,6 @@ function App() {
                 setUserEmail(emailInputRef.current.value);
                 setNotificationMessage(`Email updated to: ${emailInputRef.current.value}. Timestamp: ${Date.now()}`);
                 setNotificationDuration(5);
-                
-                console.log("Email Updated to: " + emailInputRef.current.value)
               }}>Update Email</button>
           </div>
         </div>
@@ -216,7 +210,6 @@ function App() {
           </div>
         ))}
       </div>
-
     </div>
   );
 }

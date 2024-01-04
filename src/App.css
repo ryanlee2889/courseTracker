@@ -1,38 +1,194 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+:root {
+  --background: #191825;
+  --glowCol: #ffffff74;
+  --buttonCol: #2d2b42;
+  --inputCol: #28273b;
+  --selectCol: #353350;
+}
+
+body {
+  background-color: var(--background);
+  color: white;
+  font-family: 'Manrope', sans-serif;
+
+}
+
+h1 {
   text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  animation: glow 2s ease-in-out infinite;
+  font-size: 50px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h3 {
+  text-align: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px var(--glowCol);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--glowCol);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--glowCol);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  background-color: var(--buttonCol);
+  border-radius: 5px;
+  border-width: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #E384FF;
+  box-shadow: 0 0 10px #E384FF;
+}
+
+input {
+  border-radius: 5px;
+  border-width: 0px;
+  background-color: var(--inputCol);
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+  width:40%;
+  height: 30px;
+  outline: none;
+}
+
+select {
+  width: 40%;
+  height: 20px;
+  border-width: 0px;
+  border-radius: 5px;
+  background-color: var(--selectCol);
+  color: rgb(155, 148, 148);
+  text-align: center;
+  font-size: 15px;
+  appearance: none;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.Wrapper {
+  display: flex;
+  align-items: flex-start;
+  
+}
+
+.AddSnipe, .UserInfo {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  background-color: #1f1e2e;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+  width: 35%;
 }
 
-.App-link {
-  color: #61dafb;
+.UpdateEmail {
+  width: 50%;
+  margin:auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: 100%;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.snipeContainer, .emailContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.snipeInput {
+  display: flex;
+  justify-content: center; /* Add this line */
+  align-items: center;
+}
+
+.sectionInput {
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.snipeButton {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 7px;
+  height: 100%;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+}
+
+.clearSnipeButton {
+  width: 50%;
+  margin:auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: 100%;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
+}
+
+.SnipeList {
+  display: grid;
+  margin-left: 100px;
+  margin-right: 100px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+}
+
+.Snipe, .SnipeItem {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  box-sizing: border-box;
+  justify-items: center;
+}
+
+.Snipe {
+  filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.25));
+  grid-template-columns: 40px 1fr 1fr 1fr;
+}
+
+.SnipeItem {
+  grid-template-columns: 40px 1fr 1fr 1fr;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.25));
+}
+
+.deleteSnipe {
+  padding: 10px;
+  border-radius: 15pxpx;
+  height: 40px;
+  width: 40px;
+}
+
+.deleteSnipe:hover {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25));
 }

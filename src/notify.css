@@ -1,0 +1,29 @@
+@keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+    }
+    10%, 90% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  
+  .Notification {
+    animation: slideIn 5s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #cecece0e;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e284ff3b;
+    height: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px #E384FF;
+  }

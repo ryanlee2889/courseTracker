@@ -4,6 +4,8 @@ This is a full-stack application that tracks the status of Rutgers Courses via t
 
 ![Preview](https://i.imgur.com/WS9Mcit.png)
 
+### [Preview Video](https://www.youtube.com/watch?v=28EwhZd5qPI)
+
 ## Features
 
 - React for the frontend

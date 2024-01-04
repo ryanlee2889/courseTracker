@@ -1,4 +1,4 @@
-# React Firebase Application
+# Rutgers Course Tracker
 
 This is a full-stack application that tracks the status of Rutgers Courses via the Schedule of Classes endpoint and e-mails the user when it opens up.
 

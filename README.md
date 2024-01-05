@@ -17,7 +17,8 @@ This is a full-stack application that tracks the status of Rutgers Courses via t
 
 1. Clone the repository
 2. Install the dependencies with `npm install`
-3. Start the project with `npm start`
+3. Start the server with `node server.js`
+4. Start the project with `npm start`
 
 ## Firebase Configuration
 
